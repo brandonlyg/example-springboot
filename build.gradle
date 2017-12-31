@@ -1,0 +1,25 @@
+plugins{
+	id 'org.springframework.boot' version '1.5.8.RELEASE'
+	id 'java'
+}
+
+
+repositories {
+    mavenLocal()
+    maven {
+    	url "http://maven.aliyun.com/nexus/content/groups/public"
+    }
+    mavenCentral()
+    
+}
+
+dependencies {
+    compile(
+    	[group: 'org.springframework.boot', name: 'spring-boot-starter-web']
+   	)
+}
+
+task getJars(type: Copy){
+	from configurations.runtime
+	into 'build/libs'
+}

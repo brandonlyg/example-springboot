@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+	<shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+	<property name="logging.path" value="./logs" />
+	<property name="app.name" value="example-springboot" />
+	
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d %logger{32} %-5level - %m%n</pattern>
+        </encoder>
+        
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logging.path}/${app.name}.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+
+            <maxHistory>7</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        
+    </appender>
+    
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
