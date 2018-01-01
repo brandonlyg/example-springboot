@@ -17,6 +17,7 @@ public class RestfulController {
 		res.setCmd(1001);
 		res.setUserId("aaaaaa");
 		res.setTimeStamp(new Date());
+		res.setInfo("it's dev branch");
 
 		return res;
 	}
