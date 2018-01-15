@@ -1,36 +1,31 @@
 package example.springboot.web.mvc;
 
-import java.util.Date;
-
 public class Response {
-	private int cmd;
-	private String userId;
-	private Date timeStamp;
-	private String info;
+	private int retCode;
+	private String errMsg;
+	private Object data;
 	
-	public int getCmd() {
-		return cmd;
+	
+	public int getRetCode() {
+		return retCode;
 	}
-	public void setCmd(int cmd) {
-		this.cmd = cmd;
+	public void setRetCode(int retCode) {
+		this.retCode = retCode;
 	}
-	public String getUserId() {
-		return userId;
+	public String getErrMsg() {
+		return errMsg;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setErrMsg(String errMsg) {
+		this.errMsg = errMsg;
 	}
-	public Date getTimeStamp() {
-		return timeStamp;
+	public Object getData() {
+		return data;
 	}
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
+	public void setData(Object data) {
+		this.data = data;
 	}
-	public String getInfo() {
-		return info;
-	}
-	public void setInfo(String info) {
-		this.info = info;
-	}
+	
+	
+	
 	
 }
